@@ -1,4 +1,4 @@
-// src/main/java/dev/zero/CasinoCommand.java
+
 package dev.zero;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -13,13 +13,13 @@ public class CasinoCommand {
                 dispatcher.register(
                         CommandManager.literal("empresa")
                                 .then(CommandManager.literal("cassino")
-                                        .requires(src -> src.hasPermissionLevel(2)) // apenas OPs
+                                        .requires(src -> src.hasPermissionLevel(2)) 
                                         .then(CommandManager.argument("owner", StringArgumentType.word())
                                                 .executes(ctx -> {
                                                     String nick = StringArgumentType.getString(ctx, "owner");
                                                     CasinoManager.setOwner(nick);
                                                     ServerCommandSource src = ctx.getSource();
-                                                    // Aqui usamos Supplier<Text>:
+                                                    
                                                     src.sendFeedback(() -> Text.literal("Proprietário do cassino definido como “" + nick + "”"), false);
                                                     return 1;
                                                 })
