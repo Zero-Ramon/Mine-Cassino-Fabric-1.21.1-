@@ -38,7 +38,7 @@ public class RouletteGuiDescription extends ScreenHandler {
     public static final int SLOT_BET_BLACK = 25;
     public static final int SLOT_BET_GREEN = 34;
 
-    // 0 = preto, 1 = vermelho, 2 = verde (apenas no centro)
+
     private static final int[] ROULETTE_SLOTS = {
             0, 1, 2, 3, 4,
             13, 22, 31, 40,
@@ -52,12 +52,12 @@ public class RouletteGuiDescription extends ScreenHandler {
         for (int idx : ROULETTE_SLOTS) DECORATIVE_SLOTS.add(idx);
     }
 
-    // Slot 0 = vermelho, Slot 1 = preto, Slot 2 = verde (centro), resto alternando.
+
     private static final int[] INITIAL_COLORS = {
-            1, 0, 2, 0, 1,   // slots 0,1,2,3,4
-            0, 1, 0, 1,      // 13,22,31,40
-            0, 1, 0, 1,      // 39,38,37,36
-            0, 1, 0          // 27,18,9
+            1, 0, 2, 0, 1,   
+            0, 1, 0, 1,      
+            0, 1, 0, 1,      
+            0, 1, 0         
     };
     private int[] currentColors;
 
@@ -104,12 +104,12 @@ public class RouletteGuiDescription extends ScreenHandler {
             t.delay = 0;
 
             if (t.spinStep < t.spinsToAlign) {
-                // Avança uma posição para girar!
+
                 int last = t.colors[t.colors.length - 1];
                 System.arraycopy(t.colors, 0, t.colors, 1, t.colors.length - 1);
                 t.colors[0] = last;
 
-                // Atualiza slots visuais
+  
                 for (int i = 0; i < ROULETTE_SLOTS.length; i++) {
                     t.handler.customInv.setStack(
                             ROULETTE_SLOTS[i],
@@ -121,7 +121,7 @@ public class RouletteGuiDescription extends ScreenHandler {
                 t.handler.sendContentUpdates();
                 t.spinStep++;
 
-                // Som de giro
+  
                 if (t.player != null) {
                     t.player.getWorld().playSound(
                             null,
@@ -133,7 +133,7 @@ public class RouletteGuiDescription extends ScreenHandler {
                     );
                 }
             }
-            // Exibe resultado e paga
+   
             else if (!t.shown) {
                 for (int i = 0; i < ROULETTE_SLOTS.length; i++) {
                     t.handler.customInv.setStack(
@@ -183,11 +183,11 @@ public class RouletteGuiDescription extends ScreenHandler {
                 t.handler.sendContentUpdates();
                 t.shown = true;
             }
-            // Delay pós-roleta
+    
             else if (t.delay < 40) {
                 t.delay++;
             }
-            // Reset real: agora notifica e libera para nova aposta
+         
             else {
                 t.handler.spinning = false;
                 t.handler.betColor = -1;
@@ -294,10 +294,10 @@ public class RouletteGuiDescription extends ScreenHandler {
             return false;
         }
 
-        // ===== Probabilidades flexíveis para cada aposta! =====
+
         final int res = sorteioProbabilidadeVencedor(c);
 
-        // Calcula quantas rotações para cair no res, considerando o slot central
+       
         int offset = 0;
         for (int i = 0; i < currentColors.length; i++) {
             int idx = (RESULT_SLOT_INDEX + i) % currentColors.length;
@@ -306,7 +306,7 @@ public class RouletteGuiDescription extends ScreenHandler {
                 break;
             }
         }
-        int minSpins = 3 * currentColors.length; // Para efeito visual
+        int minSpins = 3 * currentColors.length;
         int spinsToAlign = minSpins + offset;
 
         final int[] start = currentColors.clone();
@@ -335,7 +335,7 @@ public class RouletteGuiDescription extends ScreenHandler {
         double chanceWin;
         double roll = RANDOM.nextDouble();
 
-        // verde tem menos chance
+      
         if (aposta == 2) {
             chanceWin = 0.08;
         } else {
