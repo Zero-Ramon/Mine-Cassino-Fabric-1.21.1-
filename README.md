@@ -31,8 +31,7 @@
 
 ## 🚀 Instalação
 
-1. **Baixe a última versão do mod** na [página de releases](https://github.com/seuusuario/CassinoRamon/releases).
-2. **Coloque o arquivo `.jar` na pasta `mods/`** do seu Minecraft Fabric 1.20.1+.
+2. **Coloque o arquivo `.jar` na pasta `mods/`** do seu Minecraft Fabric 1.21.1+.
 3. **Execute o jogo normalmente.**
 
 ---
