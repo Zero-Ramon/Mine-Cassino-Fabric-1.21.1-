@@ -11,7 +11,7 @@ public class ModBlocks {
     public static final Block ROULETTE_BLOCK = new RouletteBlock(Block.Settings.create()
             .strength(2.5f)
             .requiresTool()
-            .solid() // ADICIONE ISSO
+            .solid()
     );
 
     public static void register(String modid) {
