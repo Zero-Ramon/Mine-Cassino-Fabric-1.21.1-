@@ -19,14 +19,14 @@ public class ModItems {
     public static Item GREEN_BOTTON;
 
     public static void register(String modid) {
-        // Item "Ficha Cassino" com nome estilizado: "Ficha" cinza e "Cassino" vermelho
+   
         CHIP = Registry.register(
                 Registries.ITEM,
                 Identifier.of(modid, "chip"),
                 new Item(new Item.Settings()) {
                     @Override
                     public Text getName(ItemStack stack) {
-                        // "Ficha" em cinza (§7) e "Cassino" em vermelho (§c)
+                     
                         return Text.literal("Ficha ")
                                 .formatted(Formatting.GRAY)
                                 .append(Text.literal("Cassino").formatted(Formatting.RED));
