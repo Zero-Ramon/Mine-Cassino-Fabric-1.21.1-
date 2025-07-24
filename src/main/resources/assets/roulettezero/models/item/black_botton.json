@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "roulettezero:item/black_botton"
+  },
+  "display": {
+    "thirdperson": {},
+    "firstperson": {}
+  },
+  "overrides": [],
+  "custom_model_data": 0
+}

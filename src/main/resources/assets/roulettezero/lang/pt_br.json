@@ -1,0 +1,18 @@
+{
+  "item.roulettezero.black_botton": "§0Apostar Preto",
+  "item.roulettezero.black_botton.tooltip": [
+    "§7Clique para apostar no preto.",
+    "§8Retorno: 1.2x"
+  ],
+  "item.roulettezero.red_botton": "§cApostar Vermelho",
+  "item.roulettezero.red_botton.tooltip": [
+    "§7Clique para apostar no vermelho.",
+    "§cRetorno: 1.2x"
+  ],
+  "item.roulettezero.green_botton": "§aApostar Verde",
+  "item.roulettezero.green_botton.tooltip": [
+    "§7Clique para apostar no verde.",
+    "§aRetorno: 10x"
+  ],
+  "item.roulettezero.chip": "Ficha de Cassino"
+}

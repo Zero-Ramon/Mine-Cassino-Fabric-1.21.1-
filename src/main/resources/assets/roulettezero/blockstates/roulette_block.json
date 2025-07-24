@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "roulettezero:block/roulette_block" }
+  }
+}

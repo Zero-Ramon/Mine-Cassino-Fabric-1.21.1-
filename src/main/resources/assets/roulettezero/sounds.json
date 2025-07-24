@@ -1,0 +1,11 @@
+{
+  "roulette_spin": {
+    "sounds": [ "roulettezero:roulette_spin" ]
+  },
+  "roulette_win": {
+    "sounds": [ "roulettezero:roulette_win" ]
+  },
+  "roulette_lose": {
+    "sounds": [ "roulettezero:roulette_lose" ]
+  }
+}
