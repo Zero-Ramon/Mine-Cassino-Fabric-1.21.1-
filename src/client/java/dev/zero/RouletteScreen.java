@@ -35,14 +35,14 @@ public class RouletteScreen extends HandledScreen<RouletteGuiDescription> {
         super.render(ctx, mouseX, mouseY, delta);
 
         if (handler.isSpinning()) {
-            // Enquanto gira, exibe a mensagem
+           
             String msg = "Girando...";
             int w  = textRenderer.getWidth(msg);
             int xx = this.x + (backgroundWidth - w) / 2;
             int yy = this.y + 10;
             ctx.drawText(textRenderer, msg, xx, yy, 0xFFFFFF, false);
         } else {
-            // Quando para, mostra os tooltips dos botões
+           
             drawBetButtonTooltips(ctx, mouseX, mouseY, handler);
         }
     }
@@ -92,6 +92,6 @@ public class RouletteScreen extends HandledScreen<RouletteGuiDescription> {
 
     @Override
     protected void drawForeground(DrawContext ctx, int mouseX, int mouseY) {
-        // Vazio, não desenha texto extra
+  
     }
 }
